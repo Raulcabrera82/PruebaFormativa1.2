@@ -1,0 +1,160 @@
+.imagen1:hover {filter: saturate(200%);}
+
+.animated-shadow {
+    color: #ffffff;
+    font: normal 80px Varela Round, sans-serif;
+    height: 80px;
+    left: 0;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    animation: move linear 2000ms infinite;
+    z-index: 2
+  }
+  /*Animación para rotar las sombras*/
+  @keyframes move {
+    0% {
+      text-shadow:
+        4px -4px 0 #da0641,
+        3px -3px 0 #da0641,
+        2px -2px 0 #da0641,
+        1px -1px 0 #da0641,
+        -4px 4px 0 #13f1fc,
+        -3px 3px 0 #13f1fc,
+        -2px 2px 0 #13f1fc,
+        -1px 1px 0 #13f1fc
+      ;
+    }
+    25% {
+      text-shadow:
+        -4px -4px 0 #13f1fc,
+        -3px -3px 0 #13f1fc,
+        -2px -2px 0 #13f1fc,
+        -1px -1px 0 #13f1fc,
+        4px 4px 0 #da0641,
+        3px 3px 0 #da0641,
+        2px 2px 0 #da0641,
+        1px 1px 0 #da0641
+      ;
+    }
+    50% {
+      text-shadow:
+        -4px 4px 0 #da0641,
+        -3px 3px 0 #da0641,
+        -2px 2px 0 #da0641,
+        -1px 1px 0 #da0641,
+        4px -4px 0 #13f1fc,
+        3px -3px 0 #13f1fc,
+        2px -2px 0 #13f1fc,
+        1px -1px 0 #13f1fc
+      ;
+    }
+    75% {
+      text-shadow:
+        4px 4px 0 #13f1fc,
+        3px 3px 0 #13f1fc,
+        2px 2px 0 #13f1fc,
+        1px 1px 0 #13f1fc,
+        -4px -4px 0 #da0641,
+        -3px -3px 0 #da0641,
+        -2px -2px 0 #da0641,
+        -1px -1px 0 #da0641
+      ;
+    }
+    100% {
+      text-shadow:
+        4px -4px 0 #da0641,
+        3px -3px 0 #da0641,
+        2px -2px 0 #da0641,
+        1px -1px 0 #da0641,
+        -4px 4px 0 #13f1fc,
+        -3px 3px 0 #13f1fc,
+        -2px 2px 0 #13f1fc,
+        -1px 1px 0 #13f1fc
+      ;
+    }
+  }
+    
+.carousel {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+}
+#imagen {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+}
+
+
+
+
+
+footer
+{
+    margin-top:50px;
+    width:100%;
+    height:200px;
+    background-color:rgb(186, 192, 192);
+}
+
+
+#a{
+    background-color: rgb(248, 249, 250);
+}
+
+.centrado{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hr {
+  border: 0; 
+  height: 12px; 
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+  box-shadow: inset 0 12px 12px -12px orange;}
+
+p{
+  text-align: center;
+  font-style:italic; 
+  line-height: 30pt;
+  font-size: 12pt;
+  color: #222;
+  }
+
+h1 {
+  font-size: 20pt;
+  color: #222;
+  text-align: center;
+}
+
+h2 {
+  font-size: 18pt;
+  color: #222;
+  text-align: center;
+}
+
+h3 {
+  font-size: 16pt;
+  color: #222;
+  text-align: center;
+}
+
+h4 {
+  font-size: 14pt;
+  color: #222;
+  text-align: center;
+}
+
+h5 {
+  font-size: 14pt;
+  color: #222;
+  text-align: center;
+}
+
+
+
+

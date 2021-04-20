@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang=”en”>
+<head>
+    <LINK REL="StyleSheet" HREF="estilo.css" TYPE="text/css">
+    <meta charset=”UTF-8″ />
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
+    <!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>
+    <!-- Compiled and minified Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" >
+    <!-- Minified JS library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Compiled and minified Bootstrap JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" ></script>       
+    <title>Tienda Tecnologica</title>
+
+           <!--Script para el carrusel-->
+           <script>
+            window.onload = function () {
+    // Variables
+    const IMAGENES = [
+        'https://www.libreriaservicom.cl/wp-content/uploads/2020/12/ventilador-gamer-pro-para-notebook-rx0025-reptilex-f1.jpg',
+        'https://mundoenlinea.cl/wp-content/uploads/2019/04/ROG-Strix-SCAR-II-600x381.jpg',
+        'https://www.scglobal.cl/1963-large_default/notebook-gamer-hp-pav-15-dk0007la-i7-9750h-16gb-1tb128gb-w10-gtx-1660.jpg'
+    ];
+    const TIEMPO_INTERVALO_MILESIMAS_SEG = 1000;
+    let posicionActual = 0;
+    let $botonRetroceder = document.querySelector('#retroceder');
+    let $botonAvanzar = document.querySelector('#avanzar');
+    let $imagen = document.querySelector('#imagen');
+    let $botonPlay = document.querySelector('#play');
+    let $botonStop = document.querySelector('#stop');
+    let intervalo;
+
+    // Funciones
+
+    /**
+     * Funcion que cambia la foto en la siguiente posicion
+     */
+    function pasarFoto() {
+        if(posicionActual >= IMAGENES.length - 1) {
+            posicionActual = 0;
+        } else {
+            posicionActual++;
+        }
+        renderizarImagen();
+    }
+
+    /**
+     * Funcion que cambia la foto en la anterior posicion
+     */
+    function retrocederFoto() {
+        if(posicionActual <= 0) {
+            posicionActual = IMAGENES.length - 1;
+        } else {
+            posicionActual--;
+        }
+        renderizarImagen();
+    }
+
+    /**
+     * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
+     */
+    function renderizarImagen () {
+        $imagen.style.backgroundImage = `url(${IMAGENES[posicionActual]})`;
+    }
+
+    /**
+     * Activa el autoplay de la imagen
+     */
+    function playIntervalo() {
+        intervalo = setInterval(pasarFoto, TIEMPO_INTERVALO_MILESIMAS_SEG);
+        // Desactivamos los botones de control
+        $botonAvanzar.setAttribute('disabled', true);
+        $botonRetroceder.setAttribute('disabled', true);
+        $botonPlay.setAttribute('disabled', true);
+        $botonStop.removeAttribute('disabled');
+
+    }
+
+    /**
+     * Para el autoplay de la imagen
+     */
+    function stopIntervalo() {
+        clearInterval(intervalo);
+        // Activamos los botones de control
+        $botonAvanzar.removeAttribute('disabled');
+        $botonRetroceder.removeAttribute('disabled');
+        $botonPlay.removeAttribute('disabled');
+        $botonStop.setAttribute('disabled', true);
+    }
+
+    // Eventos
+    $botonAvanzar.addEventListener('click', pasarFoto);
+    $botonRetroceder.addEventListener('click', retrocederFoto);
+    $botonPlay.addEventListener('click', playIntervalo);
+    $botonStop.addEventListener('click', stopIntervalo);
+    // Iniciar
+    renderizarImagen();
+    } 
+        </script>
+        <!--------fin carrusel------->
+    
+    <script>
+    //Inicio del script carrusel
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if(slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides,2000);
+        }
+    //Fin de script del carrusel
+        
+    </script>
+</head>
+
+
+<body> 
+<!--Martin Muñoz-->
+<!--Logo-->
+<img src="https://res.cloudinary.com/civico/image/upload/c_fill,f_auto,fl_lossy,h_628,q_auto:low,w_1200/v1400733288/entity/image/file/016/000/537d7e681790bc80a5000016.jpg"
+width="150"
+height="100">
+<!--Titulo-->
+<h1 class="animated-shadow">Actividad Formativa</h1>
+<!--Menú-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Menu</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Inicio</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="pagina1.html">Productos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Contactos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="formulario.html">Formulario</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <hr class="hr">
+  <!--Imagenes de productos-->
+<img class="imagen1" src="https://www.gamestop.es/wp-content/uploads/2018/03/PC-Gamer-MSI.jpg">
+<img class="imagen1" src="https://www.transmedia.cl/wp-content/uploads/2019/08/telefonosvarioshuaweiiphonesamsung.jpg"
+width="400"
+height="250">
+<img class="imagen1" src="https://static.pcfactory.cl/imagenes/Notebook-Gamer-ASUS-TUF-Gaming-F15-FX506LI-HN143T_6.png"
+width="400"
+height="250">
+<hr class="hr">
+
+<!---Carrusel de imagenes con JS-->
+<div class="carousel">
+    <button id="retroceder">Retroceder</button>
+    <div id="imagen"></div>
+    <button id="avanzar">Avanzar</button>
+</div>
+<div class="controles">
+    <button class="centrado" id="play">Play</button>
+    <button class="centrado" id="stop" disabled>Stop</button>
+</div>
+<hr class="hr">
+
+<!--Secciones y articulos-->
+<article>
+    <h2>Armado de computadores y venta de notebooks</h2>      
+    <p>En nuestra tienda podemos armar tu computador ideal, personalizado a tu medida o puedes elegir la portabilidad y elegancia de un notebook.</p>
+</article>
+<article>
+    <h2>Smartphone</h2>
+    <p>Vendemos los modelos mas recientes y traemos variedad, para poder atender a todo el público de la mejor manera.</p>
+</article>
+<hr class="hr">
+<div class="seccion" id="Computadoras" >
+    <h2>1. Las Computadoras</h2>
+    <p>Son una herramienta potente, utilizada en muchas areas por ejemplo, en deportes electronicos, ciencia, edicion, etc, esta maravillosa herramienta es capaz de brindarnos muchos servicios.
+    <div class="subseccion" id="Tipos de computadoras" >
+        <h3>1.1 Computadoras gamer</h3>
+        <p>Esta linea de la computación fue diseñada con fines de entretención, son computadoras caracterizadas por tener diseños llamativos y componentes potentes, usualmente son utilizadas para jugar, por eso se les conocen como computadoras gamers.
+        <h3>1.2 Computadoras oficina</h3>
+        <p>Estas computadoras son de características mas recortadas que las gamer y con un diseño enfocado mas en la elegancia y no tan llamativos como los gamers, no suelen contar con tarjetas gráficas potentes debido a que su campo es la oficina.
+    </div>
+</div>
+<hr class="hr">
+<div class="seccion" id="Celulares" >
+    <h2>2. Los Celulares</h2>
+    <p>Son dispositivos compactos y muy utiles, a día de hoy se consideran casi un aparato indispensable para nuestra sociedad, debido a todos los servicios que nos brinda.
+    <div class="subseccion" id="Tipos de celulares" >
+        <h3>2.1 Celulares gamer</h3>
+        <p>Al igual que pasa con las computadoras, los celulares están entrando en el mundo gamer, se distinguen por sus diseños llamativos y su potencia a nivel de hardware, estos están diseñados para jugar ya sea por diversion o por oficio.
+        <h3>2.2 Celulares convencionales</h3>
+        <p>Son aquellos celulares que vemos en nuestro día a día, se utilizan con un efoque mas tradicional como la comunicación, herramientras varias como calculadoras, camaras, brujulas, alarmas, entre otros, este tipo de celular es el mas popular y al que todo mundo quiere acceder.
+    </div>
+</div>
+<hr class="hr">
+<!--Aside-->
+<div class="wrapper">
+<!-- Sidebar -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h3>Bootstrap Sidebar</h3>
+        </div>
+
+      <ul class="list-unstyled components">
+          <p>Dummy Heading</p>
+          <li class="active">
+              <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Home</a>
+              <ul class="collapse list-unstyled" id="homeSubmenu">
+                  <li>
+                      <a href="#">Home 1</a>
+                  </li>
+                  <li>
+                      <a href="#">Home 2</a>
+                  </li>
+                  <li>
+                      <a href="#">Home 3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#">About</a>
+          </li>
+          <li>
+              <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+              <ul class="collapse list-unstyled" id="pageSubmenu">
+                  <li>
+                      <a href="#">Page 1</a>
+                  </li>
+                  <li>
+                      <a href="#">Page 2</a>
+                  </li>
+                  <li>
+                      <a href="#">Page 3</a>
+                  </li>
+              </ul>
+          </li>
+          <li>
+              <a href="#">Portfolio</a>
+          </li>
+          <li>
+              <a href="#">Contact</a>
+          </li>
+      </ul>
+  </nav>
+
+</div>
+
+
+ <!--Fin del Aside-->
+
+
+
+
+ <!--Raúl Cabrera-->
+ <!--Footer-->
+ 
+ 
+<footer>
+     
+    <div>
+        <center>
+            <h4>Servicio al Cliente</h4>
+        <p>-Privacidad y Seguridad</p>
+        <p>-Orden y Servicio</p>
+        <p>-Terminos y Condiciones</p>
+
+    </center>
+              
+    </div>
+
+    <h5>Informacion:</h5>
+    <div class="social">
+        <a href="#"> <img src="https://logodownload.org/wp-content/uploads/2014/09/facebook-logo-2-1.png" alt="facebook" height="20"></a>
+        <a href="#"> <img src="https://i.pinimg.com/originals/71/72/16/7172161b580470deb78078669236d2c1.jpg" alt="instagram" height="20"></a>
+        <a href="#"> <img src="https://hipertextual.com/wp-content/uploads/2012/06/twitter-bird-white-on-blue.jpg" alt="twitter" height="20"></a>
+        <a href="#"> <img src="data:image/jpeg;base64,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" alt="whatsapp" width="20"></a>
+    </div>
+
+</footer>
+</html>
